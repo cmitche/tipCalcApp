@@ -1,0 +1,47 @@
+<header><h1>{{welcome}}</h1></header>
+<!-- start of meal price  -->
+<div>
+<h3>Meal Price</h3>
+<!-- increase button  -->
+<button (click)="increasePrice()">+</button>
+<!-- input field  -->
+<input type="number" [(ngModel)]="price" placeholder="$">
+<!-- decrease button  -->
+<button (click)="decreasePrice()">-</button>
+</div>
+<!-- end of price  -->
+
+
+<!-- start of tax  -->
+<div>
+<h3>Tax</h3>
+<!-- increase button  -->
+<button (click)="increaseTax()">+</button>
+<!-- input field  -->
+<input type="number" [(ngModel)]="tax" placeholder="%">
+<!-- decrease button  -->
+<button (click)="decreaseTax()">-</button>
+</div>
+<!-- end of tax -->
+
+
+<!-- start of tip  -->
+<div>
+  <!-- calculate tip button -->
+<button type="button" class="btn btn-primary" (click)="calcTip()">Calculate Tip</button>
+<h3>Tip</h3>
+<p>Price before tip = {{priceWithTax | currency: 'USD':true}}.<button (click)="noTip()">no tip</button></p>
+<p>10% gratuity is: {{tenPercentTip | currency: 'USD':true}}.<button (click)="calcFinalPriceTen()">select</button></p>
+<p>15% gratuity is: {{fifteenPercentTip | currency: 'USD':true}}.<button (click)="calcFinalPriceFifteen()">select</button></p>
+<p>20% gratuity is: {{twentyPercentTip | currency: 'USD':true}}.<button (click)="calcFinalPriceTwenty()">select</button></p>
+</div>
+<!-- end of tip  -->
+
+
+<!-- start of final price -->
+<div>
+<h2 id="total">Your total is {{totalPrice | currency: 'USD':true}}</h2>
+<button type="button" class="btn btn-danger" (click)="resetCalc()">clear</button>
+</div>
+<!-- end of final price -->
+<router-outlet></router-outlet>
