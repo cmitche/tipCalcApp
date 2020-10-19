@@ -59,18 +59,12 @@ export class AppComponent {
     this.priceWithTax = 0;
   }
 
-  // calcTotal(){
-  // this.tenPercentTotal = (this.priceWithTax * .10) + this.priceWithTax;
-  // this.fifteenPercentTotal = (this.priceWithTax * .15) + this.priceWithTax;
-  // this.twentyPercentTotal = (this.priceWithTax * .20) + this.priceWithTax;
-  // }
-
   increasePrice(){
     this.price++;
   }
 
   decreasePrice(){
-    if(this.price != 0){
+    if(this.price > 0){
       this.price--;
     }
   }
@@ -78,7 +72,7 @@ export class AppComponent {
     this.tax++;
   }
   decreaseTax(){
-    if(this.tax != 0){
+    if(this.tax > 0){
     this.tax--;
     }
   }
